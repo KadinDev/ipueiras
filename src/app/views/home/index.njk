@@ -1,0 +1,27 @@
+{% extends 'layout.njk' %}
+
+{% block title %}
+    <title> Ipueiras | Encontre tudo o que precisa </title>
+{% endblock title %}
+
+{% block content %}
+
+    {% include 'parts/header.njk' %}    
+
+    <div id="mapid"></div>
+
+    <div class="users">
+        {% for user in users %}
+            <span hidden 
+                data-id="{{user.id}}"
+                data-avatar="{{user.avatar}}"
+                data-name="{{user.name}}"
+                data-latitude="{{user.latitude}}"
+                data-longitude="{{user.longitude}}"
+            >
+            </span>
+        {% endfor %}
+    </div>
+
+
+{% endblock content %}

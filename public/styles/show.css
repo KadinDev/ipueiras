@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&family=Roboto:wght@400;700&display=swap');
+
+/* font-family: 'Play', sans-serif; */
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-shadow: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(250,250,250);
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 0 2px #999;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 2rem;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    margin-right: 1rem;
+    color: #111;
+    transition: transform 0.2s;
+}
+
+header a:hover {
+    transform: scale(1.1);
+}
+
+header h1 {
+    font-family: 'Play', sans-serif;
+    font-size: 2rem;
+    color: #111;
+}
+
+.section {
+    max-width: 800px;
+    margin: 10vh auto 0 auto;
+}
+
+.container-user {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.image-user {
+    text-align: center;
+}
+
+.image-user img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #999;
+}
+
+.details-user h2 {
+    margin-bottom: 5px;
+    font-family: 'Play', sans-serif;
+    line-height: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.details-user h2 a {
+    margin-left: 10px;
+}
+
+.details-user p:nth-child(2) {
+    font-weight: bold;
+    opacity: 0.8;
+    font-size: 15px;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+
+.details-user .about {
+    color: #555;
+    margin-bottom: 35px;
+}
+
+.links-sociais {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.links-sociais a,
+.links-sociais p {
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    opacity: 0.9;
+    font-size: 14px;
+    line-height: 16px;
+    transition: opacity 0.2;
+}
+
+.links-sociais a:hover,
+.links-sociais p:hover {
+    opacity: 1;
+}
+
+.links-sociais p {
+    position: relative;
+}
+
+.links-sociais .yt:hover {
+    opacity: 0.9;
+}
+
+.instagram::before {
+    content: url(/images/insta.png);
+    position: absolute;
+    top: -30px;
+    right: 50%;
+    transform: translateX(50%)
+}
+
+.facebook::before {
+    content: url(/images/face.png);
+    position: absolute;
+    top: -30px;
+    right: 50%;
+    transform: translateX(50%)
+}
+
+.yt::before {
+    content: url(/images/yt.png);
+    position: absolute;
+    top: -30px;
+    right: 50%;
+    transform: translateX(50%)
+}
+
+
+.images-user {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+
+.images-user img {
+    width: 120px;
+    height: 120px;
+    border: solid 1px #999;
+    cursor: pointer;
+    filter: brightness(90%);
+    transform: scale(1);
+    transition: transform 0.4s;
+
+    object-fit: cover;
+}
+
+.images-user img:hover {
+    filter: brightness(100%);
+    transform: scale(1.1);
+}
+
+
+#mapid {
+    width: 100%;
+    height: 300px;
+    border: solid 2px #999;
+    margin-bottom: 60px;
+}
+
+
+
+.leaflet-popup-content {
+    text-align: center;
+    min-width: 200px;
+}
+
+/* MODAL */
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    opacity: 1;
+    visibility: visible;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.2s;
+}
+
+.modal.active {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal img {
+    width: 350px;
+    height: 350px;
+    box-shadow: 0 0 4px #999;
+    border: solid 1px #000;
+}
+
+.modal i {
+    color: #111;
+    font-size: 30px;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 4px #999
+}
+
+
+
+/* QR CODE*/
+#QRCodeImage {
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    z-index: 1000;
+}
+
+#QRCodeImage:hover {
+    transform: scale(3);
+}
+
+
+/* FOOTER */
+.footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 30px 0;
+    background-color: #fff;
+    box-shadow: 0 0 2px #999
+}
+
+.footer p {
+    color: #999;
+    font-family: 'Play', sans-serif;
+}
+

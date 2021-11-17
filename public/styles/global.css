@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --background: #F0F2F5;
+    --red: #E52E4D;
+    --blue: #5429CC;
+    --green: #33CC95;
+    --blue-light: #6933FF;
+    --text-title: #363F5F;
+    --text-body: #969CB3;
+    --shape: #FFFFFF;
+    --black: #111;
+}
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1080px) {
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media (max-width: 720) {
+    html {
+        font-size: 87.5%;
+    }
+}
+
+body, input, textarea, select, button {
+    font: 400 1rem sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Play', sans-serif;
+}
+
+h1, h2, h3, h4, h5, strong {
+    font-weight: 600;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed; 
+}

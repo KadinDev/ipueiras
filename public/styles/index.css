@@ -1,0 +1,142 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: var(--shape);
+    border-bottom: solid 1px var(--black);
+    padding: 10px;
+}
+
+.content-header {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-header a:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+.content-header img {
+    width: 50px;
+    height: 50px;
+}
+
+.formSearch {
+    width: 50%;
+    height: 40px;
+    box-shadow: 1px 1px 2px var(--black);
+    border-radius: 5px;
+    transition: box-shadow 0.2s;
+    background-color: var(--black)
+}
+
+.formSearch:hover {
+    box-shadow: 1px 1px 2px var(--blue);
+}
+
+.formSearch form {
+    background-color: var(--background);
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border: solid 0.5px #999;
+}
+
+.formSearch form input {
+    outline: none;
+    background: transparent;
+    border-bottom: solid 1px #999;
+    padding: 2px;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    width: 100%;
+    color: var(--black);
+}
+
+.formSearch form input:focus {
+    border-bottom: solid 1px var(--black);
+}
+
+.formSearch form input::placeholder {
+    opacity: 0.9;
+    letter-spacing: 1px;
+    
+}
+
+.formSearch button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    transition: transform 0.2s;
+    margin-left: 10px;
+}
+
+.formSearch button:hover {
+    transform: scale(1.1);
+}
+
+.formSearch button i:hover {
+    color: var(--blue);
+}
+
+.user a i {
+    color: var(--blue);
+    font-size: 30px;
+    transition: transform 0.2s;
+}
+
+.user a i:hover {
+    transform: scale(1.1);
+}
+
+.footer {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    background-color: var(--shape);
+    padding: 1rem;
+    border-top: 1px solid var(--black);
+}
+
+.footer p {
+    opacity: 0.7;
+}
+
+/* MAPA */
+
+#mapid {
+    width: 100%;
+    height: 100vh;
+}
+
+
+.leaflet-popup-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.leaflet-popup-tip-container {
+    opacity: 0;
+    visibility: hidden;
+    transform: rotate(180deg);
+}

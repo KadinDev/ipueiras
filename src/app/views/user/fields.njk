@@ -1,0 +1,271 @@
+
+<div class="item "> <!-- photo -->
+ <div class="avatar"> Foto | Banner </div>
+
+    <div class="input">
+        <input 
+            type="url" 
+            name="avatar"
+            placeholder="Url de uma foto sua, ou loja, ou outro..."
+
+            required
+        >
+    </div>
+    <!--
+    <div class="foto"> Foto 
+        <span>
+            <i class="material-icons">add_a_photo</i>
+        </span> 
+    </div>
+
+    <div class="input">
+        <input 
+            id="avatar-input"
+            type="file" 
+            name="avatar"
+            accept="image/*"
+            
+            required
+        >
+    </div>
+    -->
+    
+</div>
+
+<div class="item">
+
+    <div class="name"> Nome </div>
+
+    <div class="input">
+        <input 
+            type="text" 
+            name="name"
+            placeholder="Seu nome"
+            autocomplete="off"
+            spellcheck="false"
+
+            required
+        >
+    </div>
+</div>
+
+<div class="item">
+
+    <div class="email"> Email <span>
+        <i class="material-icons">email</i>
+    </span>  </div>
+
+    <div class="input">
+        <input 
+            type="email" 
+            name="email"
+            placeholder="usuario@usuario.com"
+            
+            onblur="Validate.apply(this, 'isEmail')"
+
+            required
+        >
+    </div>
+</div>
+
+<div class="item">
+
+    <div class="password"> Senha <span>
+        <i class="material-icons">lock</i>
+    </span> </div>
+
+    <div class="input">
+        <input 
+            type="password" 
+            name="password"
+            placeholder="**********"
+
+            onblur="Validate.apply(this, 'isPassword')"
+
+            required
+        >
+        
+    </div>
+
+</div>
+
+<!-- FOTOS TRABALHO -->
+<div class="item">
+
+    <div class="trabalho"> Trabalho <span>
+        <i class="material-icons">work</i>
+    </span>  </div>
+    
+    <div class="input">
+        <input
+            id="photos-input" 
+            type="file" 
+            name="avatar"
+            accept="image/*"
+            multiple
+            required
+
+            onChange="PhotosUpload.handleFileInput(event)"
+        >
+        
+    </div>
+
+    <div id="photos-preview">
+        {% if files %}
+
+            {% for image in files %}
+                <div class="photoWork" id="{{image.id}}" >
+                    <img src="{{image.src}}" alt="{{image.name}}">
+                    <i class="material-icons"
+                        onClick="PhotosUpload.removeOldPhoto(event)"
+                    >close</i>
+                </div>
+            {% endfor %}
+            <input type="hidden" name="removed_files">
+
+        {% endif %}
+    </div>
+
+</div>
+<!-- -->
+
+
+
+<div class="item">
+    
+    <div class="telephone"> Contato <span>
+        <i class="material-icons">telephone</i>
+    </span>  </div>
+
+    <div class="input">
+        <input 
+            type="text" 
+            name="contact"
+            placeholder="(00)00000-0000"
+            
+            onblur="Validate.apply(this, 'isContact')"
+            
+            required
+        >
+    </div>
+</div>
+
+<div class="item">
+    
+    <div class="telephone"> Endereço <span>
+        <i class="material-icons">push_pin</i>
+    </span>  </div>
+
+    <div class="input">
+        <input 
+            type="text" 
+            name="address"
+            placeholder="Seu endereço"
+            
+            required
+        >
+    </div>
+</div>
+
+<div class="item">
+    
+    <div class="instagram"> Instagram <br/> não obrigatório! </div>
+
+    <div class="input">
+        <input 
+            type="text" 
+            name="instagram"
+            placeholder="Digite seu Instagram"
+
+        >
+    </div>
+</div>
+
+<div class="item">
+    
+    <div class="instagram"> Facebook <br/> não obrigatório! </div>
+
+    <div class="input">
+        <input 
+            type="text" 
+            name="facebook"
+            placeholder="Digite seu Facebook"
+
+        >
+    </div>
+</div>
+
+<div class="item">
+    
+    <div class="instagram"> Youtube <br/> não obrigatório! </div>
+
+    <div class="input">
+        <input 
+            type="text" 
+            name="youtube"
+            placeholder="Digite seu Youtube"
+
+        >
+    </div>
+</div>
+
+<div class="item">
+    
+    <div class="about"> Sobre </div>
+
+    <div class="input">
+        <textarea name="about" placeholder="Sobre você / Empresa / o que faz / com o que trabalha ..." required ></textarea>
+    </div>
+</div>
+
+
+<div class="item">
+    
+    <div class="mapa"> Clique dentro do mapa e marque sua localização <br/> MARCAÇÃO OBRIGATÓRIO
+        <span class="open-mapa">
+            <i class="material-icons">map</i>
+        </span> 
+    </div>
+
+</div>
+
+
+<div class="item">
+    
+    <div class="horario-funcionamento"> Horário funcionamento / atendimento </div>
+
+    <div class="input">
+        <input 
+            type="text" 
+            name="attendance"
+            placeholder="De Segunda a Sábado / Das 7h às 17h"
+
+            required
+        >
+    </div>
+</div>
+
+<div class="item">
+    
+    <div class="open_weekend"> Aberto finais de semana? </div>
+     
+    <div class="input">
+        <input 
+            type="hidden" 
+            id="open_weekend"
+            name="open_weekend"
+            value="1"
+
+            required
+        >
+
+        <div class="button-select">
+            <button data-value="1" onclick="toggleSelect(event)" type="button" class="active">Sim</button>
+            <button data-value="0" onclick="toggleSelect(event)" type="button">Não</button>
+        </div>
+
+    </div>
+    
+</div>
+
+

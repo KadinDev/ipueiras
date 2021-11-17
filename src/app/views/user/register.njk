@@ -1,0 +1,65 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+    <div class="content-page-register">
+
+
+        <section class="register container">
+            
+            <div class="img-container-register">
+                <!-- 
+                <img reside="contain" id="preview" src="/images/brasao.png" >
+                -->
+            </div>
+
+            <form action="/users/register" method="POST" enctype="multipart/form-data" >
+
+                <div class="img-form-register">
+                    <img src="/images/brasao.png" alt="">
+                </div>
+               
+                <div class="content-form-register">
+    
+    
+                    <div class="fields">
+                        {% include 'user/fields.njk' %}
+                    </div>
+
+                    <button class="button" type="submit"> cadastrar </button>
+
+                    <div class="footer">
+                        <ul>
+                            <li>
+                                <a href="/users/login">login</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="modal-mapa active">
+                    <i class="material-icons">close</i>
+                    <div class="content-mapa-register">
+                        
+                        <div id="mapid"></div>
+                        <input type="hidden" name="latitude" required>
+                        <input type="hidden" name="longitude" required>
+
+                    </div>
+        
+                </div>
+
+            </form>
+            
+
+            
+        </section>
+        
+
+    </div>
+
+    <script src="/scripts/page-register.js"></script>
+    <script src="/scripts/map-page-register.js"></script>
+    <script src="/scripts/photos-uploads.js"></script>
+
+{% endblock content %}

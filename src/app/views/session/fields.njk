@@ -1,0 +1,38 @@
+
+<div class="item">
+
+    <div class="email"> <span>
+        <i class="material-icons">email</i>
+    </span> Email </div>
+
+    <div class="input">
+        <input 
+            type="email" 
+            name="email"
+            placeholder="Digite seu email"
+            value="{{user.email}}"
+            onblur="Validate.apply(this, 'isEmail')"
+
+            required
+        >
+    </div>
+</div>
+
+<div class="item">
+
+    <div class="password"> <span>
+        <i class="material-icons">lock</i>
+    </span> Senha</div>
+
+    <div class="input">
+        <input 
+            type="password" 
+            name="password"
+            placeholder="Digite sua senha"
+
+            required
+        >
+        
+    </div>
+
+</div>

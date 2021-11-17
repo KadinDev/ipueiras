@@ -1,0 +1,32 @@
+<div class="header">
+
+    <div class="content-header">
+        <a href="/">
+            <img src="/images/brasao.png" alt="">
+        </a>
+
+        <div class="formSearch">
+            <form action="/home" method='GET' >
+                <input 
+                type="text"
+                placeholder="O que procura?"
+
+                name="filter"
+                value="{{filter}}"
+
+                autocomplete="off"
+                correct="off"
+                >
+                <button type="submit">
+                    <i class="material-icons">search</i>
+                </button>
+            </form>
+        </div>
+
+        <div class="user">
+            <a href="/users/login"> <i class="material-icons">login</i> </a>
+        </div>
+
+    </div>
+    
+</div>

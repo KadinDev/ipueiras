@@ -1,0 +1,200 @@
+
+.section
+{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: url(/images/city.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    background:  url(/images/splash.jpg);
+    
+    background-size: 150%;
+	background-position: center;
+	mix-blend-mode: screen; /* fazendo a imagem ficar dentro do splash */
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+}
+
+.menu img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 2rem;
+    align-self: flex-start;
+
+    animation: brasao ease-in-out 1s;
+}
+
+@keyframes brasao {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.description {
+    background-color: var(--shape);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px var(--blue);
+    position: relative;
+    width: 500px;
+    min-height: 250px;
+
+    user-select: none;
+    animation: containerDescription ease-in-out 1s;
+}
+
+@keyframes containerDescription {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.description h2 {
+    color: var(--blue);
+    font-size: 3rem;
+    width: 100%;
+    margin-bottom: 0.8rem;
+}
+
+.description p {
+    font-weight: 600;
+    opacity: 0.7;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.description a {
+    color: var(--shape);
+    background: var(--blue);
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    position: absolute;
+    bottom: 20px;
+
+    transition: box-shadow 0.2s;
+}
+
+.description a:hover {
+    box-shadow: 0 0 10px var(--black);
+}
+
+
+.lottie {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.links ul {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+
+    transform: translateY(-50%);
+}
+
+.links ul li {
+    list-style: none;
+    transition: transform 0.4s;
+}
+
+.links ul li:hover {
+    transform: scale(1.5);
+}
+
+/* LINKS NAO ATIVADO NA RESPONSIVIDADE */
+.links-active {
+    display: none;
+}
+
+
+@media ( max-width: 650px ) {
+    .menu {
+        position: relative;
+        max-width: 500px;
+        left: 0;
+        margin: 0 auto;
+    }
+
+    .menu img {
+        align-self: center;
+    }
+
+    .description {
+        max-width: 400px;
+        position: relative;
+    }
+
+    .description h2 {
+        font-size: 2.5rem;
+    }
+
+    .description a {
+        position: absolute;
+        bottom: 20px;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .links-active {
+        display: initial;
+    }
+
+    .links-active ul {
+        position: absolute;
+        top: 100px;
+        right: 40px;
+        width: 100px;
+    
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    
+    }
+    
+    .links-active ul li {
+        list-style: none;
+    }
+    
+    .links-active ul li a {
+        background: transparent;
+    }
+    
+    .links-active ul li a:hover {
+        box-shadow: none
+    }
+}

@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+    <head>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin="" 
+        />
+
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin="">
+        </script>
+
+        <link rel="icon" href="/images/brasao.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+
+
+        <link rel="stylesheet" href="/styles/show.css">
+
+        <title> Ipueiras | {{user.name}} </title>
+
+    </head>
+
+    <body>
+
+        <header>
+            
+            <a href="/home">
+                <i class="material-icons">arrow_back</i>
+            </a>
+
+            <h1> {{user.name}} </h1>
+        </header>
+
+        <section class="section">
+
+            <div class="container-user">
+
+                <div class="image-user">
+                    <img src="{{user.avatar}}" alt="{{user.name}}">
+                </div>
+
+                
+
+                <div class="details-user">
+                    <h2>
+                        {{ user.name }}
+                        <a href="http://api.whatsapp.com/send?1=pt_BR&phone=55{{user.contact}}" target="_blank">
+                            <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_dyf5lscb.json"  background="transparent"  speed="1"  style="width: 30px; height: 30px;"  loop autoplay></lottie-player>
+                        </a>
+
+                        <img id="QRCodeImage">
+                    </h2>
+                    <p> <em> {{user.attendance}} </em> </p>
+                    <p class="about">{{user.about}}</p>
+                    
+                    <div class="links-sociais">
+                        <a href="https://www.instagram.com/{{user.instagram}}/" target="_blank">
+                            <p class="instagram"> <span></span> {{user.instagram}}  </p>
+                        </a>
+        
+                        {% if user.facebook %}
+                            <a href="https://www.facebook.com/{{user.facebook}}/" target="_blank">
+                                <p class="facebook"> <span></span> {{user.facebook}} </p>
+                            </a>
+                        {% endif %}
+
+                        {% if user.youtube %}
+                            <p class="yt"> <span></span> {{user.youtube}}  </p>
+                        {% endif %}
+        
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="images-user">
+                {% for image in files %}
+
+                    <img 
+                        id="{{image.id}}"
+                        src="{{image.src}}" 
+                        alt="{{image.name}}"
+                    >
+
+                {% endfor %}
+
+            </div>
+
+            <div id="mapid"></div>
+            
+            <div class="user-location">
+                <span class="lat" hidden> {{user.latitude}} </span>
+                <span class="lon" hidden> {{user.longitude}} </span>
+                <span class="avatar" hidden> {{user.avatar}} </span>
+                <span class="address" hidden> {{user.address}} </span>
+                <span class="contact" hidden> {{user.contact}} </span>
+            </div>
+            
+        </section>
+
+        <div class="modal active">
+            <div style="position: relative">
+                <i class="material-icons">close</i>
+                <img src="" alt="">
+            </div>
+        </div>
+
+        
+
+        {% include "parts/footer.njk" %}
+
+        <script src="/scripts/show.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    </body>
+
+</html>
