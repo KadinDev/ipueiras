@@ -94,7 +94,8 @@ header h1 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 20px;
     
 }
 
@@ -240,7 +241,6 @@ header h1 {
     border-radius: 4px;
     cursor: pointer;
     transition: transform 0.5s;
-    z-index: 1000;
 }
 
 #QRCodeImage:hover {
